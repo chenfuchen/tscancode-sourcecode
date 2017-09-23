@@ -98,9 +98,9 @@ InternalError::InternalError(const Token *tok, const std::string &errorMsg) :
 ErrorLogger::ErrorMessage::ErrorMessage()
     : _severity(Severity::none), _inconclusive(false)
 {
-     code_trace=true;
+     code_trace=false;
 	//读取配置，是否保留出错行上下文信息 --TSC 0502
-	 read_cfg_xml();
+	 //read_cfg_xml();
 }
 
 ErrorLogger::ErrorMessage::ErrorMessage(const std::list<FileLocation> &callStack, Severity::SeverityType severity, const std::string &msg, const std::string &id, bool inconclusive) :
@@ -139,8 +139,8 @@ ErrorLogger::ErrorMessage::ErrorMessage(const std::list<FileLocation> &callStack
     _severity(severity),   // severity for this error message
     _inconclusive(inconclusive)
 {
-	code_trace=true;
-	read_cfg_xml();
+	code_trace=false;
+	//read_cfg_xml();
     // set the summary and verbose messages
     setmsg(msg);
 }
@@ -148,8 +148,8 @@ ErrorLogger::ErrorMessage::ErrorMessage(const std::list<FileLocation> &callStack
 ErrorLogger::ErrorMessage::ErrorMessage(const std::list<const Token*>& callstack, const TokenList* list, Severity::SeverityType severity, const std::string& id, const std::string& subid,const std::string& msg, bool inconclusive)
     : _id(id), _subid(subid),_severity(severity), _inconclusive(inconclusive)
 {
-    code_trace=true;
-	read_cfg_xml();
+    code_trace=false;
+	//read_cfg_xml();
     // Format callstack
     for (std::list<const Token *>::const_iterator it = callstack.begin(); it != callstack.end(); ++it) {
         // --errorlist can provide null values here
