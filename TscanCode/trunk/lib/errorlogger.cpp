@@ -292,7 +292,7 @@ std::string ErrorLogger::ErrorMessage::getXMLHeader(int xml_version)
     // version 2 header
     else {
         ostr << "<results version=\"" << xml_version << "\">\n";
-        ostr << "  <TscanCode version=\"" << CppCheck::version() << "\"/>\n";
+        ostr << "  <cppcheck version=\"" << CppCheck::version() << "\"/>\n";
         ostr << "  <errors>";
     }
 
