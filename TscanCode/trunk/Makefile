@@ -150,7 +150,7 @@ dmake:	tools/dmake.cpp
 	$(CXX) -o dmake tools/dmake.cpp common/filelister.cpp common/path.cpp -Ilib
 
 clean:
-	rm -f lib/*.o cli/*.o test/*.o externals/tinyxml/*.o TscanCode cppcheck.1
+	rm -f lib/*.o cli/*.o test/*.o externals/tinyxml/*.o common/*.o TscanCode cppcheck.1
 
 man:	man/cppcheck.1
 
