@@ -134,13 +134,15 @@ bool CppCheckExecutor::parseFromArgs(CppCheck *cppcheck, int argc, const char* c
 		}
 		pCode = pCode->GetNext();
 	}
-
+/*
 	if (!_files.empty()) {
 		return true;
 	} else {
 		std::cout << "TscanCode: error: no files to check - all paths ignored." << std::endl;
 		return false;
 	}
+*/
+	return true;
 }
 //from TSC 20131028  filter the code of third lib 
 void CppCheckExecutor::readcfg()
